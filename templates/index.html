@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НЕЙРОТОКСИН</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main-design.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <img src="{{ url_for('static', filename='image/main-styles.png') }}">
+    <div class="content">
+        <h1>Загрузите ДатаСет в .csv формате</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div>
+                <input type="file" id="file" name="file" accept=".csv">
+                <label for="file" class="file-upload-button">Выберите файл</label> <!-- Ваша новая кнопка выбора файла -->
+            </div>
+            <div>
+                <input type="text" name="y_column" placeholder="Введите столбец для прогнозирования">
+                <button type="submit">Загрузить</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('file').addEventListener('change', function(e) {
+            var fileName = e.target.files[0].name;
+            document.querySelector('.file-upload-button').textContent = fileName;
+        });
+    </script>
+</body>
+
+</html>
