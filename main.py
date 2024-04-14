@@ -16,10 +16,10 @@ def plot_graph(data, y_column, predictions):
     fig = go.Figure()
 
     fig.add_trace(go.Scatter(x=data[y_column], y=predictions, mode='markers',
-                             marker=dict(color='#324f59'), name='Точки данных'))
+                             marker=dict(color='#ff0000'), name='Точки данных'))
 
     fig.add_trace(go.Scatter(x=data[y_column], y=predictions, mode='lines',
-                             line=dict(color='#243940'), name='Линия тренда'))
+                             line=dict(color='#ffffff'), name='Линия тренда'))
 
     fig.update_layout(
         title='Предсказания модели в сравнении с фактическими значениями',
