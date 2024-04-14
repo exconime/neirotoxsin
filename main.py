@@ -35,7 +35,7 @@ def plot_graph(data, y_column, predictions):
 
 def process_file(file, y_column):
     try:
-        data = pd.read_csv(file)
+        data = pd.read_csv(file, sep=';')
         data.ffill(inplace=True)
 
         Y = data[y_column]
